@@ -29,7 +29,7 @@ export const SignedOut = createStackNavigator({
     screen: SignIn,
     navigationOptions: {
       title: "Sign In",
-      headerStyle
+      header: null,
     }
   }
 });

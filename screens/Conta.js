@@ -1,5 +1,5 @@
 import React, { Component }  from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Card, Button, Text } from "react-native-elements";
 
 import { ScrollNavigator, NavigatorContent, NavigatorBox, Title, Icon } from '../components/styled';
@@ -47,6 +47,21 @@ class BottomNavigator extends Component {
 
 }
 
+const styles = StyleSheet.create({
+  container: {
+     width: 200, 
+     height: 150,  
+     opacity: .2, 
+     marginBottom: 15,
+     padding: 30,
+  },
+  text: {
+    color: '#ffff', 
+    fontSize: 45, 
+    textAlign: 'center',
+  },
+});
+
 
 export default ({ navigation }) => (
 
@@ -54,7 +69,17 @@ export default ({ navigation }) => (
         <StatusBar
           barStyle="light-content"
         />
+        <View style={styles.container}>
+          <Text style={styles.text}>Jonas</Text>
+        </View>
+        
         <SwiperContainer />
+        <Card title='INTERNET BANKING'
+        image={require('../assets/tIB55Hr.jpg')}>
+          <Text style={{marginBottom: 10}}>
+    The idea with React Native Elements is more about component structure than actual design.
+  </Text>
+        </Card>
         <BottomNavigator />
 </HomeContainer>
 

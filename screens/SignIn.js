@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
      flexGrow: 1,
      justifyContent: 'center',
      alignItems: 'center',
-     backgroundColor: '#455a64'
+     backgroundColor: '#800080'
    },
    inputBox: {
      width: 300,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
    button: {
      width: 300,
      height: 45,
-     backgroundColor:'#1c313a',
+     backgroundColor:'#4d004d',
      borderRadius: 25,
      paddingVertical: 13,
    },
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
 export default ({ navigation }) => (
   <View style={styles.container}>
-         
+         <Logo />
           <TextInput 
           style={styles.inputBox} 
           underlineColorAndroid='rgba(0,0,0,0)' 
@@ -73,7 +73,7 @@ export default ({ navigation }) => (
            <TouchableOpacity style={styles.button} onPress={() => {
           onSignIn().then(() => navigation.navigate("SignedIn"));
         }} >
-           <Text style={styles.buttonText}> Entrar </Text>
+           <Text style={styles.buttonText}> SIGN IN </Text>
            </TouchableOpacity>
    
            
