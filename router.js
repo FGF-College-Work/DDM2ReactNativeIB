@@ -3,7 +3,8 @@ import { Platform, StatusBar } from "react-native";
 import {
   createStackNavigator,
   TabNavigator,
-  createSwitchNavigator
+  createSwitchNavigator,
+  createBottomTabNavigator
 } from "react-navigation";
 import { FontAwesome } from "react-native-vector-icons";
 
@@ -12,6 +13,8 @@ import SignIn from "./screens/SignIn";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import Conta from './screens/Conta';
+import Saldo from './screens/Saldo';
+import Pagamento from './components/Pagamento';
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -22,7 +25,7 @@ export const SignedOut = createStackNavigator({
     screen: SignUp,
     navigationOptions: {
       title: "Sign Up",
-      headerStyle
+      header: null,
     }
   },
   SignIn: {
@@ -34,7 +37,7 @@ export const SignedOut = createStackNavigator({
   }
 });
 
-export const SignedIn = TabNavigator(
+export const SignedIn = createBottomTabNavigator(
   {
     Home: {
       screen: Home,
@@ -60,6 +63,24 @@ export const SignedIn = TabNavigator(
         tabBarLabel: "Conta",
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="lock" size={30} color={tintColor} />
+        )
+      }
+    },
+    Saldo: {
+      screen: Saldo,
+      navigationOptions: {
+        tabBarLabel: "Saldo",
+        tabBarIcon: ({ tintColor }) => (
+          <FontAwesome name="bars" size={30} color={tintColor} />
+        )
+      }
+    },
+    Pagamento: {
+      screen: Pagamento,
+      navigationOptions: {
+        tabBarLabel: "Pagamento",
+        tabBarIcon: ({ tintColor }) => (
+          <FontAwesome name="credit-card" size={30} color={tintColor} />
         )
       }
     }
