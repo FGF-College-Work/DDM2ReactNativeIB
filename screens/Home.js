@@ -4,44 +4,43 @@ import { Card, Button } from "react-native-elements";
 
 const images = [
   {
-    key: 1,
-    name: "Nathan Anderson",
-    image: require("../assets/1.jpg"),
-    url: "https://unsplash.com/photos/C9t94JC4_L8"
+    key: "Restaurante",
+    name: "R$ 84,00",
+    content: "Compra no valor de R$ 84,00 (2x) em Restaurante Cantina do Nero"
+    
   },
   {
-    key: 2,
-    name: "Jamison McAndie",
-    image: require("../assets/2.jpg"),
-    url: "https://unsplash.com/photos/waZEHLRP98s"
+    key: "Cinema",
+    name: "R$ 100,00",
+    content: "Compra no valor de R$ 84,00 (2x) em Restaurante Cantina do Nero", 
+    
   },
   {
-    key: 3,
-    name: "Alberto Restifo",
-    image: require("../assets/3.jpg"),
-    url: "https://unsplash.com/photos/cFplR9ZGnAk"
+    key: "Praia",
+    name: "R$ 800,00",
+    content: "Compra no valor de R$ 84,00 (2x) em Restaurante Cantina do Nero", 
+    
   },
   {
-    key: 4,
-    name: "John Towner",
-    image: require("../assets/4.jpg"),
-    url: "https://unsplash.com/photos/89PFnHKg8HE"
+    key: "Viagem",
+    name: "R$ 1.000,00",
+    content: "Compra no valor de R$ 84,00 (2x) em Restaurante Cantina do Nero", 
+    
   }
 ];
 
 export default () => (
   <View style={{ flex: 1 }}>
     <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
-      {images.map(({ name, image, url, key }) => (
-        <Card title={`CARD ${key}`} image={image} key={key}>
-          <Text style={{ marginBottom: 10 }}>
-            Photo by {name}.
+      {images.map(({ name, content, key }) => (
+        <Card title={`Conta ${key}`}  key={key}>
+          <Text style={{ marginBottom: 10, fontSize:20 }}>
+            Valor {name}.
           </Text>
-          <Button
-            backgroundColor="#03A9F4"
-            title="VIEW NOW"
-            onPress={() => Linking.openURL(url)}
-          />
+          <Text>
+            {content}
+          </Text>
+          
         </Card>
       ))}
     </ScrollView>
